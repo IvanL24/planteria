@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Yuji+Mai&display=swap" rel="stylesheet">
+
+ <link rel="stylesheet" href="css/main.css">
+  <script src="js/script.js"></script>
+
+  <title>Planteria</title>
+</head>
+<body onload="load()">
+    <header>
+        <h1>Planteria.ltd</h1>
+    </header>
+    <div class="Container">
+        <form class="personal_info">
+             <h2>Welcome to Planteria!</h2>
+            <table id="info" class="info">
+                <tr>
+                <td colspan="2">Customer Name:</td>
+                </tr>
+                <tr>
+                    <td><input id="first" type="text" pattern="[A-Za-z]{1,15}" placeholder="Firstname" required="true" autofocus></td>
+                    <td><input id="last" type="text" pattern="[A-Za-z]{1,15}" placeholder="Lastname" required="true"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Address:</td>
+
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="text" name="address" id="address" required="true"></td>
+                </tr>
+                <tr>
+                    <td>Postal Code:</td>
+                    <td>Phone number:</td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="postal" pattern="[A-Za-z][0-9][A-Za-z][0-9][A-Za-z][0-9]" required="true"></td>
+                    <td><input type="tel" id="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required="true"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Email:</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input id="email" type="email" value=""></td>
+                </tr>
+            </table>
+
+            <div class="orderContainer">
+                
+                <div class="planterOptions">
+                <h2>Customize your Planter</h2>
+                <h3>Select planter shape</h3>
+                <div class="cards">
+
+                    <div id="square" class="square" onclick="getSquare()">
+                        <figure>
+                            <img src="img/cube.png" alt="cone">
+                            <div class="shadow">
+                                <div class="darkerShadow"></div>
+                            </div>
+                        </figure>
+                        <div class="shapeName">
+                            <p>
+                                Square/ Rectangle
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="cylinder" class="cylinder" onclick="getCylinder()">
+                        <figure>
+                            <img src="img/flat_bottom_cylinder.png" alt="cone">
+                            <div class="shadow">
+                                <div class="darkerShadow"></div>
+                            </div>
+                        </figure>
+                        <div class="shapeName">
+                            <p>
+                                Flat Bottomed Cylinder
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="sphere" class="sphere" onclick="getRound()">
+                        <figure>
+                            <img src="img/sphere.png" alt="cone">
+                            <div class="shadow">
+                                <div class="darkerShadow"></div>
+                            </div>
+                        </figure>
+                        <div class="shapeName">
+                            <p>
+                                1/2 Sphere
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="cone" class="cone" onclick="getCone()" >
+                        <figure>
+                            <img src="img/cone.png" alt="cone">
+                            <div class="shadow">
+                                <div class="darkerShadow"></div>
+                            </div>
+                        </figure>
+                        <div class="shapeName">
+                            <p>
+                                Truncated Cone
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="overview"></div>
+                </div>
+                
+            </div>
+            <button  type="submit" id="submitBtn" class="orderPlanter" onclick="placeOrder(); return false;" disabled>Place Order</button>
+            
+            <div id="order" class="order">
+                <div class="summary">
+                <h1>Order Details:</h1>
+                <div id="menu_content">
+                    <div class="customer_info">
+                    <ul>
+                        <li id="name"></li>
+                        <li id="location"></li>
+                        <li id="postalcode"></li>
+                    </ul>
+                    </div>
+                    <div class="order_info">
+                    <ul>
+                        <li id="planterType"></li>
+                        <li  id="volume"></li>
+                        <li id="total"></li>
+                    </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+
+            
+        
+        </form>
+    
+    </div>
+    
+
+</body>
+</html>
